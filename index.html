@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Gidget’s Big Adventure (Multiple Endings)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Gidget’s Big Adventure</h1>
+  <p class="subtitle">A choose-your-own-adventure story with multiple endings!</p>
+</header>
+
+<!-- START -->
+<section id="start" class="scene">
+  <img src="images/forest.jpg" alt="Forest path">
+  <p>
+    You and your brave cat <strong>Gidget</strong> step into a magical forest. Birds sing. Leaves sparkle.
+    Ahead, a sign points to four places.
+  </p>
+  <div class="choices">
+    <button onclick="showScene('cave')">Cave</button>
+    <button onclick="showScene('river')">River</button>
+    <button onclick="showScene('mountain')">Mountain</button>
+    <button onclick="showScene('meadow')">Secret Meadow</button>
+  </div>
+</section>
+
+<!-- CAVE BRANCH -->
+<section id="cave" class="scene hidden">
+  <img src="images/cave.jpg" alt="Dark cave">
+  <p>
+    The cave is cool and shadowy. Gidget’s whiskers twitch. You hear a soft rumble from inside.
+  </p>
+  <div class="choices">
+    <button onclick="showScene('cave_enter')">Enter quietly</button>
+    <button onclick="showScene('cave_side')">Climb around the side</button>
+    <button onclick="showScene('start')">Back</button>
+  </div>
+</section>
+
+<section id="cave_enter" class="scene hidden">
+ <img src="images/insidecave.jpg" alt="Inside cave">
+  <p>
+    You tiptoe in… and see a big shape. Gidget freezes like a statue.
+  </p>
+  <div class="choices">
+    <button onclick="showScene('ending_bear')">Keep going</button>
+    <button onclick="showScene('cave_echo')">Make an echo (say “hello!”)</button>
+    <button onclick="showScene('cave')">Back</button>
+  </div>
+</section>
+
+<section id="cave_echo" class="scene hidden">
+<img src="images/caverobot.jpg" alt="Just a robot">
+
+  <p>
+    “Hello!” echoes through the cave. The big shape stirs… but it’s not a bear. It’s a friendly cave robot
+    covered in dust. It beeps happily when Gidget rubs against it.
+  </p>
+  <div class="choices">
+    <button onclick="showScene('ending_robot_friend')">Make a new friend</button>
+    <button onclick="showScene('cave')">Back</button>
+  </div>
+</section>
+
+<section id="cave_side" class="scene hidden">
+  <img src="images/crystals.jpg" alt="Glowing crystals">
+  <p>
+    You climb around the cave and find glowing crystals in the rocks! Gidget taps one and it shines brighter.
+    A tiny tunnel glimmers behind 
+
+
+the crystals.
+  </p>
+  <div class="choices">
+    <button onclick="showScene('crystal_tunnel')">Crawl into the tunnel</button>
+    <button onclick="showScene('start')">Return to the forest</button>
+  </div>
+</section>
+
+<section id="crystal_tunnel" class="scene hidden">
+  <img src="images/cavetreasurebox.jpg" alt="Treasure Box">
+  <p>
+    The tunnel opens into a secret room with a locked stone box. There are symbols on it:
+    a paw print, a wave, and a mountain.
+  </p>
+  <div class="choices">
+    <button onclick="showScene('ending_mystery')">Solve the symbols</button>
+    <button onclick="showScene('start')">Leave it and return</button>
+  </div>
+</section>
+
+<!-- RIVER BRANCH -->
+<section id="river" class="scene hidden">
+  <img src="images/river.jpg" alt="River">
+  <p>
+    A river rushes past, sparkling in the sunlight. Gidget dips a paw into the water and pulls it back fast:
+    “Too cold!”
+  </p>
+  <div class="choices">
+    <button onclick="showScene('river_raft')">Build a raft</button>
+    <button onclick="showScene('river_bridge')">Look for a bridge</button>
+    <button onclick="showScene('start')">Back</button>
+  </div>
+</section>
+
+<section id="river_raft" class="scene hidden">
+ <img src="images/riverbendraft.jpg" alt="River Raft">
+  <p>
+    You build a small raft from sticks and vines. Gidget sits at the front like a captain.
+    The current carries you toward a bend with something shiny on the shore.
+  </p>
+  <div class="choices">
+    <button onclick="showScene('river_shiny')">Stop at the shiny thing</button>
+    <button onclick="showScene('ending_waterfall')">Keep rafting</button>
+    <button onclick="showScene('river')">Back</button>
+  </div>
+</section>
+
+<section id="river_shiny" class="scene hidden">
+ <img src="images/shorekey.jpg" alt="Silver Key">
+  <p>
+    On the shore, you and Gidget find a silver key tangled in reeds! 
+  </p>
+  <div class="choices">
+    <button onclick="showScene('ending_key_to_treasure')">Keep the key</button>
+    <button onclick="showScene('river')">Return to the riverbank</button>
+  </div>
+</section>
+
+<section id="river_bridge" class="scene hidden">
+ <img src="images/bridge.jpg" alt="bridge">
+  <p>
+    You follow the river and discover a wobbly rope bridge. Gidget looks at it and sits down like,
+    “You first.”
+  </p>
+  <div class="choices">
+    <button onclick="showScene('ending_brave_crossing')">Cross carefully</button>
+    <button onclick="showScene('ending_silly_splash')">Hop across fast</button>
+    <button onclick="showScene('river')">Back</button>
+  </div>
+</section>
+
+<!-- MOUNTAIN BRANCH -->
+<section id="mountain" class="scene hidden">
+  <img src="images/mountain.jpg" alt="Mountain">
+  <p>
+    The mountain trail climbs higher and higher. Gidget bounds up like she has springs for legs.
+    Near the top, you spot a glittery object and also hear a faint “meow?” from somewhere.
+  </p>
+  <div class="choices">
+    <button onclick="showScene('mountain_shiny')">Investigate glittery object</button>
+    <button onclick="showScene('mountain_meow')">Follow the “meow?” sound</button>
+    <button onclick="showScene('start')">Back</button>
+  </div>
+</section>
+
+<section id="mountain_shiny" class="scene hidden">
+  <img src="images/treasure.jpg" alt="Treasure chest">
+  <p>
+    You find a treasure chest wedged between rocks! Gidget tries to sit on it immediately.
+    It looks locked.
+  </p>
+  <div class="choices">
+    <button onclick="showScene('ending_treasure_locked')">Try to open it</button>
+    <button onclick="showScene('ending_treasure_opened')">Use the key (if you found it)</button>
+    <button onclick="showScene('mountain')">Back</button>
+  </div>
+</section>
+
+<section id="mountain_meow" class="scene hidden">
+ <img src="images/ledgecat.jpg" alt="Kitten on Ledge">
+  <p>
+    You follow the sound and find a tiny kitten stuck on a ledge! Gidget leans over and gently bumps it
+    with her head, calming it down.
+  </p>
+  <div class="choices">
+    <button onclick="showScene('ending_rescue')">Rescue the kitten</button>
+    <button onclick="showScene('ending_hero_view')">Help it and watch the sunset</button>
+    <button onclick="showScene('mountain')">Back</button>
+  </div>
+</section>
+
+<!-- MEADOW BRANCH -->
+<section id="meadow" class="scene hidden">
+  <img src="images/meadow.jpg" alt="Meadow">
+  <p>
+    You step into a secret meadow full of butterflies and flowers. Gidget chases a glowing butterfly
+    that zips toward an old tree.
+  </p>
+  <div class="choices">
+    <button onclick="showScene('meadow_butterfly')">Follow the butterfly</button>
+    <button onclick="showScene('meadow_flowers')">Inspect the flowers</button>
+    <button onclick="showScene('start')">Back</button>
+  </div>
+</section>
+
+<section id="meadow_butterfly" class="scene hidden">
+<img src="images/FairyDoor.jpg" alt="Fairy Door">
+  <p>
+    The glowing butterfly lands on a tiny <strong>fairy door</strong> in the tree.
+    The door has a sign: “Knock politely.”
+  </p>
+  <div class="choices">
+    <button onclick="showScene('meadow_fairy')">Knock politely</button>
+    <button onclick="showScene('ending_fairy_prank')">Knock loudly</button>
+    <button onclick="showScene('meadow')">Back</button>
+  </div>
+</section>
+
+<section id="meadow_flowers" class="scene hidden">
+<img src="images/trapdoor.jpg" alt="Trap Door Appears">
+  <p>
+    The flowers smell sweet. Gidget sneezes—<em>achoo!</em>—and accidentally bumps a hidden button in the ground.
+    A secret trapdoor opens!
+  </p>
+  <div class="choices">
+    <button onclick="showScene('ending_secret_slide')">Go down the slide</button>
+    <button onclick="showScene('meadow')">Close it and back away</button>
+  </div>
+</section>
+
+<section id="meadow_fairy" class="scene hidden">
+<img src="images/Fairyappears.jpg" alt="Fairy">
+  <p>
+    A fairy appears! She thanks you for being kind to animals. She offers a reward.
+  </p>
+  <div class="choices">
+    <button onclick="showScene('ending_fairy_wish')">Make a wish</button>
+    <button onclick="showScene('ending_fairy_map')">Ask for a map out of the forest</button>
+    <button onclick="showScene('meadow')">Back</button>
+  </div>
+</section>
+
+<!-- ENDINGS -->
+<section id="ending_bear" class="scene hidden ending">
+ <img src="images/bearcave.jpg" alt="Its a bear">
+  <h2>Ending: Bear Scare!</h2>
+  <p>
+    A sleepy bear wakes up and lets out a huge yawn—then a growl! You and Gidget sprint all the way home.
+    You’re safe… but maybe the cave wasn’t the best choice.
+  </p>
+  <button onclick="showScene('start')">Play Again</button>
+</section>
+
+<section id="ending_robot_friend" class="scene hidden ending">
+<img src="images/cave openingrobot.jpg" alt="Just a robot">
+  <h2>Ending: New Robot Friend</h2>
+  <p>
+    The friendly robot makes a “BEEP-BEEP!” and shines a light that shows a safe shortcut out.
+    You and Gidget leave with a new friend (and a cool story to tell).
+  </p>
+  <button onclick="showScene('start')">Play Again</button>
+</section>
+
+<section id="ending_mystery" class="scene hidden ending">
+  <img src="images/noteinbox.jpg" alt="Open Treasure">
+  <h2>Ending: Mystery Solved</h2>
+  <p>
+    You notice the symbols match the places you visited: paw print = Gidget, wave = river, mountain = peak.
+    When you press them in order, the stone box opens! Inside is a note: “True adventurers are curious and kind.”
+    Gidget purrs like she agrees.
+  </p>
+  <button onclick="showScene('start')">Play Again</button>
+</section>
+
+<section id="ending_waterfall" class="scene hidden ending">
+  <h2>Ending: Waterfall Whoops!</h2>
+  <p>
+    The raft zooms faster… and faster… until you see a WATERFALL sign! You jump off in time and land safely
+    on soft moss. Gidget looks annoyed but okay. You decide walking is better.
+  </p>
+  <button onclick="showScene('start')">Play Again</button>
+</section>
+
+<section id="ending_brave_crossing" class="scene hidden ending">
+ <img src="images/catbridge.jpg" alt="Cat bridge">
+  <h2>Ending: Brave Bridge Crossing</h2>
+  <p>
+    You cross the wobbly bridge slowly and carefully. Halfway across, Gidget closes her eyes and continues anyway.
+    You reach the other side and cheer. Teamwork wins!
+  </p>
+  <button onclick="showScene('start')">Play Again</button>
+</section>
+
+<section id="ending_silly_splash" class="scene hidden ending">
+ <img src="images/catonhead.jpg" alt="Cat splash">
+  <h2>Ending: Silly Splash</h2>
+  <p>
+    You try to hop across fast… the bridge bounces… and SPLASH! You land in the shallow water.
+    Gidget stays dry by leaping to your shoulder like a superhero cape.
+  </p>
+  <button onclick="showScene('start')">Play Again</button>
+</section>
+
+<section id="ending_key_to_treasure" class="scene hidden ending">
+  <h2>Ending: The Key Clue</h2>
+  <p>
+    You keep the key safe. On your way back, you notice it has a tiny chest symbol on it.
+    Next time, try using it on the treasure chest up the mountain!
+  </p>
+  <button onclick="showScene('start')">Play Again</button>
+</section>
+
+<section id="ending_treasure_locked" class="scene hidden ending">
+ <img src="images/treasurecat.jpg" alt="Treasure Cat">
+
+  <h2>Ending: Locked Treasure</h2>
+  <p>
+    You tug and tug, but the chest won’t open. Gidget sits on it like, “Mine now.”
+    You decide the real treasure is the adventure (and Gidget’s dramatic attitude).
+  </p>
+  <button onclick="showScene('start')">Play Again</button>
+</section>
+
+<section id="ending_treasure_opened" class="scene hidden ending">
+ <img src="images/OpenedTreasureCat.jpg" alt="Treasure Cat">
+  <h2>Ending: Treasure Opened!</h2>
+  <p>
+    If you found the key at the river, this is the perfect spot! The chest clicks open…
+    and inside are sparkling coins and a tiny crown that fits perfectly on Gidget’s head.
+  </p>
+  <button onclick="showScene('start')">Play Again</button>
+</section>
+
+<section id="ending_rescue" class="scene hidden ending">
+<img src="images/ledgecatpurr.jpg" alt="Cat Purr">
+  <h2>Ending: Kitten Rescue</h2>
+  <p>
+    You carefully help the kitten down. Gidget purrs and the kitten purrs back—best friends instantly.
+    You walk home proud: you saved the day!
+  </p>
+  <button onclick="showScene('start')">Play Again</button>
+</section>
+
+<section id="ending_hero_view" class="scene hidden ending">
+ <img src="images/Sunset.jpg" alt="Sunset">
+  <h2>Ending: Hero View</h2>
+  <p>
+    After helping the kitten, you all sit at a secret lookout and watch the sunset.
+    Gidget’s tail swishes calmly. It’s a perfect ending.
+  </p>
+  <button onclick="showScene('start')">Play Again</button>
+</section>
+
+<section id="ending_fairy_prank" class="scene hidden ending">
+<img src="images/GigglingFairy.jpg" alt="Fairy Prank">
+  <h2>Ending: Fairy Prank</h2>
+  <p>
+    You knock loudly—BAM BAM BAM! The fairy door pops open and… confetti explodes everywhere!
+    Gidget sneezes. The fairy giggles, “Polite knocks next time!” You laugh all the way back.
+  </p>
+  <button onclick="showScene('start')">Play Again</button>
+</section>
+
+<section id="ending_secret_slide" class="scene hidden ending">
+<img src="images/sliding.jpg" alt="Sliding Gidget">
+  <h2>Ending: Secret Slide</h2>
+  <p>
+    You slide down a hidden tunnel into a soft pile of leaves. It’s a secret shortcut out of the forest!
+    Gidget rides down too and looks extremely proud of herself.
+  </p>
+  <button onclick="showScene('start')">Play Again</button>
+</section>
+
+<section id="ending_fairy_wish" class="scene hidden ending">
+<img src="images/fairywish.jpg" alt="Fairy Wish">
+  <h2>Ending: Fairy Wish</h2>
+  <p>
+    The fairy grants you one wish. You wish for adventures where everyone stays safe.
+    The fairy smiles, and the whole forest glows warmly—like it agrees.
+  </p>
+  <button onclick="showScene('start')">Play Again</button>
+</section>
+
+<section id="ending_fairy_map" class="scene hidden ending">
+<img src="images/glowingmap.jpg" alt="Home is where the Paw Print is">
+  <h2>Ending: The Magic Map</h2>
+  <p>
+    The fairy gives you a glowing map that shows all the paths—and a tiny paw print that marks where home is.
+    You and Gidget never get lost again!
+  </p>
+  <button onclick="showScene('start')">Play Again</button>
+</section>
+
+<footer>
+  <p class="tiny">Gidget's Adventure by Mollygs</p>
+</footer>
+
+<script>
+  function showScene(id) {
+    const scenes = document.querySelectorAll('.scene');
+    scenes.forEach(scene => scene.classList.add('hidden'));
+
+    const next = document.getElementById(id);
+    if (!next) {
+      alert("Oops! That scene ID wasn't found: " + id);
+      document.getElementById('start').classList.remove('hidden');
+      return;
+    }
+    next.classList.remove('hidden');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
